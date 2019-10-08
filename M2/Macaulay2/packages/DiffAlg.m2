@@ -488,7 +488,7 @@ document {
   PARA {"All possible options to call the package can be given with the command:"},
   TT {"loadPackage (\"DiffAlg\",Configuration => {\"BaseRing\" => aRing, \"VariableName\" => varSymbol, \"DiffName\" => difSymbol, \"FieldName\" => derSymbol})"},
   PARA {"where:"},
-  UL {{TT {"aRing"},", a ", TO Ring, ", the base ring. Default ", TT {"QQ[i]"}},{TT {"varSymbol"}, ", a ", TO String, ", the name of the affine coordinates. Default ", TT{"x"}},{TT {"difSymbol"}, ", a ", TO String, ", the symbol to denote the differential of a coordinate. Default ", TT {"d"}},{TT {"derSymbol"}, ", a ", TO String, ", the symbol to denote the partial derivative of a coordinate. Default ", TT {"a"}}},
+  UL {{TT {"aRing"},", a ", TO Ring, ", the base ring. Default ", TT {"QQ"}},{TT {"varSymbol"}, ", a ", TO String, ", the name of the affine coordinates. Default ", TT{"x"}},{TT {"difSymbol"}, ", a ", TO String, ", the symbol to denote the differential of a coordinate. Default ", TT {"d"}},{TT {"derSymbol"}, ", a ", TO String, ", the symbol to denote the partial derivative of a coordinate. Default ", TT {"a"}}},
   BR{},
   Caveat => PARA {"It is recommended to operate in low degrees and dimensions because of the computational time needed to handle the number of variables generated in every degree."},
   SeeAlso => {newForm, newField}
