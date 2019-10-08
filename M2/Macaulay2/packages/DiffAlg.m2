@@ -2,8 +2,8 @@
 
 newPackage (
 	"DiffAlg",
-	Version => "1.5",
-	Date => "October, 2018",
+	Version => "1.6",
+	Date => "October, 2019",
 	Authors => {
 		{ Name => "Manuel Dubinsky",
 		  Email => "manudubinsky@gmail.com",
