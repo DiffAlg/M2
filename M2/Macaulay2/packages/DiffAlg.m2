@@ -1,13 +1,9 @@
 -- -*- coding: utf-8 -*-
 
-i := getSymbol "i"
-QQi := QQ(monoid [i])
-F := toField (QQi / (QQi_0^2+1))
-
 newPackage (
 	"DiffAlg",
-	Version => "1.5",
-	Date => "October, 2018",
+	Version => "1.6",
+	Date => "October, 2019",
 	Authors => {
 		{ Name => "Manuel Dubinsky",
 		  Email => "manudubinsky@gmail.com",
@@ -24,7 +20,7 @@ newPackage (
 	},
 	Headline => "Specialized routines for differential forms",
 	Configuration => { 
-		"BaseRing" => F,
+		"BaseRing" => QQ,
 		"VariableName" => "x",
 		"DiffName" => "d",
 		"FieldName" => "a"
@@ -492,7 +488,7 @@ document {
   PARA {"All possible options to call the package can be given with the command:"},
   TT {"loadPackage (\"DiffAlg\",Configuration => {\"BaseRing\" => aRing, \"VariableName\" => varSymbol, \"DiffName\" => difSymbol, \"FieldName\" => derSymbol})"},
   PARA {"where:"},
-  UL {{TT {"aRing"},", a ", TO Ring, ", the base ring. Default ", TT {"QQ[i]"}},{TT {"varSymbol"}, ", a ", TO String, ", the name of the affine coordinates. Default ", TT{"x"}},{TT {"difSymbol"}, ", a ", TO String, ", the symbol to denote the differential of a coordinate. Default ", TT {"d"}},{TT {"derSymbol"}, ", a ", TO String, ", the symbol to denote the partial derivative of a coordinate. Default ", TT {"a"}}},
+  UL {{TT {"aRing"},", a ", TO Ring, ", the base ring. Default ", TT {"QQ"}},{TT {"varSymbol"}, ", a ", TO String, ", the name of the affine coordinates. Default ", TT{"x"}},{TT {"difSymbol"}, ", a ", TO String, ", the symbol to denote the differential of a coordinate. Default ", TT {"d"}},{TT {"derSymbol"}, ", a ", TO String, ", the symbol to denote the partial derivative of a coordinate. Default ", TT {"a"}}},
   BR{},
   Caveat => PARA {"It is recommended to operate in low degrees and dimensions because of the computational time needed to handle the number of variables generated in every degree."},
   SeeAlso => {newForm, newField}
@@ -1381,7 +1377,3 @@ assert ({rank dist D_0, rank dist D_1, rank dist D_2, rank dist D_3} == {2, 3, 5
 ///
 
 end
-
-
-Jou = newForm "dx_0*(2*x_0*x_3^2*x_6^2+2*x_0*x_3^2*x_7^2+2*x_0*x_3^2*x_8^2+2*x_0*x_4^2*x_6^2+2*x_0*x_4^2*x_7^2+2*x_0*x_4^2*x_8^2+2*x_0*x_5^2*x_6^2+2*x_0*x_5^2*x_7^2+2*x_0*x_5^2*x_8^2)+dx_1*(2*x_1*x_3^2*x_6^2+2*x_1*x_3^2*x_7^2+2*x_1*x_3^2*x_8^2+2*x_1*x_4^2*x_6^2+2*x_1*x_4^2*x_7^2+2*x_1*x_4^2*x_8^2+2*x_1*x_5^2*x_6^2+2*x_1*x_5^2*x_7^2+2*x_1*x_5^2*x_8^2)+dx_2*(2*x_2*x_3^2*x_6^2+2*x_2*x_3^2*x_7^2+2*x_2*x_3^2*x_8^2+2*x_2*x_4^2*x_6^2+2*x_2*x_4^2*x_7^2+2*x_2*x_4^2*x_8^2+2*x_2*x_5^2*x_6^2+2*x_2*x_5^2*x_7^2+2*x_2*x_5^2*x_8^2)+dx_3*(2*i*x_0^2*x_3*x_6^2+2*i*x_0^2*x_3*x_7^2+2*i*x_0^2*x_3*x_8^2+2*i*x_1^2*x_3*x_6^2+2*i*x_1^2*x_3*x_7^2+2*i*x_1^2*x_3*x_8^2+2*i*x_2^2*x_3*x_6^2+2*i*x_2^2*x_3*x_7^2+2*i*x_2^2*x_3*x_8^2)+dx_4*(2*i*x_0^2*x_4*x_6^2+2*i*x_0^2*x_4*x_7^2+2*i*x_0^2*x_4*x_8^2+2*i*x_1^2*x_4*x_6^2+2*i*x_1^2*x_4*x_7^2+2*i*x_1^2*x_4*x_8^2+2*i*x_2^2*x_4*x_6^2+2*i*x_2^2*x_4*x_7^2+2*i*x_2^2*x_4*x_8^2)+dx_5*(2*i*x_0^2*x_5*x_6^2+2*i*x_0^2*x_5*x_7^2+2*i*x_0^2*x_5*x_8^2+2*i*x_1^2*x_5*x_6^2+2*i*x_1^2*x_5*x_7^2+2*i*x_1^2*x_5*x_8^2+2*i*x_2^2*x_5*x_6^2+2*i*x_2^2*x_5*x_7^2+2*i*x_2^2*x_5*x_8^2)+dx_6*(-(1+i)*x_0^2*x_3^2*x_6-(1+i)*x_0^2*x_4^2*x_6-(1+i)*x_0^2*x_5^2*x_6-(1+i)*x_1^2*x_3^2*x_6-(1+i)*x_1^2*x_4^2*x_6-(1+i)*x_1^2*x_5^2*x_6-(1+i)*x_2^2*x_3^2*x_6-(1+i)*x_2^2*x_4^2*x_6-(1+i)*x_2^2*x_5^2*x_6)+dx_7*(-(1+i)*x_0^2*x_3^2*x_7-(1+i)*x_0^2*x_4^2*x_7-(1+i)*x_0^2*x_5^2*x_7-(1+i)*x_1^2*x_3^2*x_7-(1+i)*x_1^2*x_4^2*x_7-(1+i)*x_1^2*x_5^2*x_7-(1+i)*x_2^2*x_3^2*x_7-(1+i)*x_2^2*x_4^2*x_7-(1+i)*x_2^2*x_5^2*x_7)+dx_8*(-(1+i)*x_0^2*x_3^2*x_8-(1+i)*x_0^2*x_4^2*x_8-(1+i)*x_0^2*x_5^2*x_8-(1+i)*x_1^2*x_3^2*x_8-(1+i)*x_1^2*x_4^2*x_8-(1+i)*x_1^2*x_5^2*x_8-(1+i)*x_2^2*x_3^2*x_8-(1+i)*x_2^2*x_4^2*x_8-(1+i)*x_2^2*x_5^2*x_8)"
-
